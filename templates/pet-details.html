@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Pet Details{% endblock %}
+
+{% block content %}
+<h1 class="display-3 my-5">Name: {{pet.name}}</h1>
+<div class="row mb-5">
+  <div class="col-md-6">
+  {% if pet.photo_url %}
+  <img class="img-fluid" src="{{pet.photo_url}}" alt="Photo of {{pet.name}}, the {{pet.species}}">
+  {% endif %}
+  </div>
+  <div class="col-md-6">
+    <p class="display-6">Pet name: {{pet.name}}</p>
+    <p class="display-6">Pet species: {{pet.species}}</p>
+    <p class="display-6">Pet age: {{pet.age}}</p>
+    <p class="display-6">Pet notes: {{pet.notes}}<v/p>
+    <p class="display-6">Pet availability: {{pet.available}}</p>
+    <a class="btn btn-lg rounded text-light btn-info" href="/pets/{{pet.id}}/edit">Edit info</a>
+  </div>
+</div>
+{% endblock %}
